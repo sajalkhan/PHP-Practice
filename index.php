@@ -9,6 +9,8 @@
 </head>
 
 <body>
+    //! ----------- Documentation ------------//
+    //! ---- https://www.php.net/manual/en/ ----
     <h1>Learning php language</h1>
 </body>
 
