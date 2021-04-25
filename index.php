@@ -1,11 +1,10 @@
 <?php include_once 'includes/header.php' ?>
 
 
-<form action='pages/home.php' method='GET'>
-    <!-- //!ai khane name ta important. name attribute diye data pass hocce ek page theke arek page a -->
-    <input type='text' name='name' placeholder='user name' /> <br />
-    <input type='password' name='password' placeholder='password' /> <br />
-    <input type='submit' value='submit' />
+<form action='pages/home.php' method='POST' enctype='multipart/form-data'>
+    <!-- //* ai khane name ta important. name attribute diye data pass hocce ek page theke arek page a -->
+    <input type='file' name='userImage' />
+    <input type='submit' value='submit' /> <br /> <br />
 </form>
 
 
