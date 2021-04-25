@@ -1,13 +1,25 @@
 <?php include_once '../includes/header.php';
 
-// ! $_POST variable use korle url a submit kora info show kore na tokhon $_POST eta diye data dhorte hobe
-echo 'name:' . $_POST['name'] . '</br>';
-echo 'password: ' . $_POST['password'] . '</br> <br/>';
+$name = $_REQUEST['name'];
+$pass = $_REQUEST['password'];
 
-//! $_REQUEST ai attribut automatically buje j eta get/post method diye data astece
-echo 'request name: ' . $_REQUEST['name'] . '</br>';
-echo 'request password: ' . $_REQUEST['password'] . '</br> </br>';
+// if ($name === 'sajal') {
+//     header('Location: https://www.google.com'); //! from here we redirect to another location
+// }
 
-echo "<a href='https://www.google.com'>{$_POST['name']}</a>" . '</br> </br>';
+//! pass home page data to about page and add necessary logic in that page
+if ($name === 'sajal') {
+    //* 1st way
+    // header('Location: about.php?name=' . $_REQUEST['name'] . '&password=' . $_REQUEST['password']);
+
+    //* 2nd way and safe
+    $info = array(
+        'name' => $_REQUEST['name'],
+        'password' => $_REQUEST['password']
+    );
+
+    $query = http_build_query($info);
+    header('Location: about.php?' . $query);
+}
 
 include_once '../includes/footer.php';
